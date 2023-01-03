@@ -10,10 +10,10 @@ export class AppComponent  {
 // DATA BINDING
 // EVENT BINDING
   user={
-   name:'Việt Trinh',
+   name:' Nguyễn Việt Trinh',
    age:21
   };
-  handle(){
-    console.log('clicked');
+  handle(event){
+    console.log('clicked', event);
   }
 }

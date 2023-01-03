@@ -1,9 +1,24 @@
-<hello name="{{ name }}"></hello>
+{{ name }}
 <p>
-  Start editing to see some magic happen :)
+  Information:
 </p>
 <!--Expression-->
 <p>{{user.name}}</p>
 <p>{{user.age}}</p>
-<input type="text" [value] ="user.name">
-<button type="button" (click)="handle()">Click me</button>
+<input type="text" value ="Nhập năm sinh">
+<button type="button" (click)="handle($event)">Click me</button>
+<br><br>
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event"/>
+<br><br>
+<hello *ngIf="user.age>=18,else under18" [name] ="user.name"></hello>
+<ng-template #under18>
+<div >
+  You are too young to see this content
+  <br><br>
+</div>
+</ng-template>
+
+<button (click)="user.age=user.age-1">-</button>
+Age:{{user.age}}
+<button (click)="user.age=user.age+1">+</button>
+
